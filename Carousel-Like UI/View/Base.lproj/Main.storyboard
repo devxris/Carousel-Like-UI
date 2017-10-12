@@ -56,6 +56,9 @@
                                                             </constraints>
                                                             <color key="tintColor" red="0.85910399999999998" green="0.16816500000000001" blue="0.20191700000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <state key="normal" image="heart"/>
+                                                            <connections>
+                                                                <action selector="likeButtonTappedWithSender:" destination="OF3-QX-ifb" eventType="touchUpInside" id="Iug-yX-hfi"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>

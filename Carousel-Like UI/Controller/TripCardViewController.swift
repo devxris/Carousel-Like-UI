@@ -64,8 +64,18 @@ extension TripCardViewController: UICollectionViewDataSource, UICollectionViewDe
 	}
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TripCell
+		cell.delegate = self
 		cell.trip = trips[indexPath.row]
 		cell.layer.cornerRadius = 4.0
 		return cell
+	}
+}
+
+extension TripCardViewController: TripCellDelegate {
+	
+	func didPressLikeButton(cell: TripCell) {
+		guard let indexPath = collectionView.indexPath(for: cell) else { return }
+		trips[indexPath.item].isLiked = trips[indexPath.item].isLiked ? false : true
+		cell.trip = trips[indexPath.item]
 	}
 }
