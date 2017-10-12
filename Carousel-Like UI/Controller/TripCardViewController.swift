@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TripCardViewController.swift
 //  Carousel-Like UI
 //
 //  Created by Chris Huang on 12/10/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TripCardViewController: UIViewController {
 	
 	override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
 

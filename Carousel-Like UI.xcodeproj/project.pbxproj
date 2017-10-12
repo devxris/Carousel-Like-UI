@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		45D4F14B1F8EFA6300D31A11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4F14A1F8EFA6300D31A11 /* AppDelegate.swift */; };
-		45D4F14D1F8EFA6300D31A11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4F14C1F8EFA6300D31A11 /* ViewController.swift */; };
+		45D4F14D1F8EFA6300D31A11 /* TripCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4F14C1F8EFA6300D31A11 /* TripCardViewController.swift */; };
 		45D4F1501F8EFA6300D31A11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45D4F14E1F8EFA6300D31A11 /* Main.storyboard */; };
 		45D4F1521F8EFA6300D31A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D4F1511F8EFA6300D31A11 /* Assets.xcassets */; };
 		45D4F1551F8EFA6300D31A11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45D4F1531F8EFA6300D31A11 /* LaunchScreen.storyboard */; };
+		45D4F1601F8F1E3300D31A11 /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4F15F1F8F1E3300D31A11 /* TripCell.swift */; };
+		45D4F1631F8F207700D31A11 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4F1621F8F207700D31A11 /* Trip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		45D4F1471F8EFA6300D31A11 /* Carousel-Like UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Carousel-Like UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D4F14A1F8EFA6300D31A11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		45D4F14C1F8EFA6300D31A11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		45D4F14C1F8EFA6300D31A11 /* TripCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCardViewController.swift; sourceTree = "<group>"; };
 		45D4F14F1F8EFA6300D31A11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45D4F1511F8EFA6300D31A11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45D4F1541F8EFA6300D31A11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45D4F1561F8EFA6300D31A11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45D4F15F1F8F1E3300D31A11 /* TripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCell.swift; sourceTree = "<group>"; };
+		45D4F1621F8F207700D31A11 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				45D4F15C1F8EFA7000D31A11 /* Resources */,
+				45D4F1611F8F206500D31A11 /* Model */,
 				45D4F15E1F8EFA8100D31A11 /* View */,
 				45D4F15D1F8EFA7A00D31A11 /* Controller */,
 			);
@@ -74,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				45D4F14A1F8EFA6300D31A11 /* AppDelegate.swift */,
-				45D4F14C1F8EFA6300D31A11 /* ViewController.swift */,
+				45D4F14C1F8EFA6300D31A11 /* TripCardViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -84,8 +89,17 @@
 			children = (
 				45D4F1531F8EFA6300D31A11 /* LaunchScreen.storyboard */,
 				45D4F14E1F8EFA6300D31A11 /* Main.storyboard */,
+				45D4F15F1F8F1E3300D31A11 /* TripCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		45D4F1611F8F206500D31A11 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				45D4F1621F8F207700D31A11 /* Trip.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +174,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45D4F14D1F8EFA6300D31A11 /* ViewController.swift in Sources */,
+				45D4F1631F8F207700D31A11 /* Trip.swift in Sources */,
+				45D4F14D1F8EFA6300D31A11 /* TripCardViewController.swift in Sources */,
+				45D4F1601F8F1E3300D31A11 /* TripCell.swift in Sources */,
 				45D4F14B1F8EFA6300D31A11 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
