@@ -108,5 +108,14 @@ extension TripCardViewController: TripCellDelegate {
 		guard let indexPath = collectionView.indexPath(for: cell) else { return }
 		trips[indexPath.item].isLiked = trips[indexPath.item].isLiked ? false : true
 		cell.trip = trips[indexPath.item]
+		
+		// update the trip object to Parse
+		trips[indexPath.item].toPFObject().saveInBackground { (success, error) in
+			if success {
+				print("Successfully saved data to Parse")
+			} else if let error = error {
+				print(error.localizedDescription)
+			}
+		}
 	}
 }
