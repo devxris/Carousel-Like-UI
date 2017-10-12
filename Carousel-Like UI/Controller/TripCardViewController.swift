@@ -67,6 +67,7 @@ class TripCardViewController: UIViewController {
 		
 		// fetch data from parse
 		let query = PFQuery(className: "Trip")
+		query.cachePolicy = .networkElseCache // Parse API for cache
 		query.findObjectsInBackground { [weak self] (objects, error) in
 			if let error = error { print(error.localizedDescription); return }
 			guard let objects = objects else { return }
