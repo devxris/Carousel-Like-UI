@@ -17,9 +17,15 @@ class TripCell: UICollectionViewCell {
 	@IBOutlet var priceLabel: UILabel!
 	@IBOutlet var likeButton: UIButton!
 	
-	var isLiked: Bool = false {
+	var trip: Trip? {
 		didSet {
-			likeButton.setImage(isLiked ? #imageLiteral(resourceName: "heartfull") : #imageLiteral(resourceName: "heart"), for: .normal)
+			guard let trip = trip else { return }
+			cityLabel.text = trip.city
+			countryLabel.text = trip.country
+			totalDaysLabel.text = "\(trip.totalDays) Days"
+			priceLabel.text = "$" + String(describing: trip.price)
+			likeButton.setImage(trip.isLiked ? #imageLiteral(resourceName: "heartfull") : #imageLiteral(resourceName: "heart"), for: .normal)
+			imageView.image = trip.featuredImage
 		}
 	}
 }
