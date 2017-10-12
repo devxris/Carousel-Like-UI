@@ -158,6 +158,18 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qv4-59-cFv">
+                                <rect key="frame" x="329" y="44" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="35o-oY-EPC"/>
+                                    <constraint firstAttribute="height" constant="30" id="LDo-jU-iPZ"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="reload"/>
+                                <connections>
+                                    <action selector="reload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QHB-2E-WD4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -166,10 +178,12 @@
                             <constraint firstItem="gPe-HN-dQf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="A3S-Qb-G2D"/>
                             <constraint firstItem="5eW-wM-hVR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ArD-BK-5fV"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ONg-EO-z4O" secondAttribute="trailing" constant="20" symbolic="YES" id="KhE-E1-sun"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qv4-59-cFv" secondAttribute="trailing" constant="16" id="W4u-qC-mVe"/>
                             <constraint firstItem="gPe-HN-dQf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="X71-hO-RFN"/>
                             <constraint firstItem="ONg-EO-z4O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="X8u-ua-uaO"/>
                             <constraint firstItem="ONg-EO-z4O" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dzF-nW-4cB"/>
                             <constraint firstAttribute="bottom" secondItem="gPe-HN-dQf" secondAttribute="bottom" id="fzW-YW-Ycu"/>
+                            <constraint firstItem="Qv4-59-cFv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gnW-P1-al4"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5eW-wM-hVR" secondAttribute="trailing" constant="20" symbolic="YES" id="lvK-5R-oqj"/>
                             <constraint firstItem="gPe-HN-dQf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rm0-pu-1mD"/>
                             <constraint firstItem="aaI-fk-uSA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tpX-xD-XgB"/>
@@ -188,5 +202,6 @@
     </scenes>
     <resources>
         <image name="heart" width="170" height="170"/>
+        <image name="reload" width="170" height="170"/>
     </resources>
 </document>

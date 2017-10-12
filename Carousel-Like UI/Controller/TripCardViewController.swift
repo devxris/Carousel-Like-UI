@@ -80,6 +80,10 @@ class TripCardViewController: UIViewController {
 			}
 		}
 	}
+	
+	@IBAction func reload(_ sender: UIButton) {
+		fetchTripsFromParse()
+	}
 }
 
 extension TripCardViewController: UICollectionViewDataSource, UICollectionViewDelegate {
