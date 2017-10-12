@@ -38,6 +38,10 @@ class TripCardViewController: UIViewController {
 		didSet {
 			collectionView.dataSource = self
 			collectionView.delegate = self
+			let swipeUpDelete = UISwipeGestureRecognizer(target: self, action: #selector(swipeUpToDelete(recognizer:)))
+			swipeUpDelete.direction = .up
+			swipeUpDelete.delegate = self
+			collectionView.addGestureRecognizer(swipeUpDelete)
 		}
 	}
 	
@@ -85,6 +89,24 @@ class TripCardViewController: UIViewController {
 	@IBAction func reload(_ sender: UIButton) {
 		fetchTripsFromParse()
 	}
+	
+	@objc func swipeUpToDelete(recognizer: UISwipeGestureRecognizer) {
+		let point = recognizer.location(in: collectionView)
+		if recognizer.state == .ended {
+			if let indexPath = collectionView.indexPathForItem(at: point) {
+				trips[indexPath.item].toPFObject().deleteInBackground(block: { (success, error) in
+					if success {
+						print("Successfully remove data")
+					} else if let error = error {
+						print(error.localizedDescription)
+						return
+					}
+					self.trips.remove(at: indexPath.item)
+					self.collectionView.reloadItems(at: [indexPath])
+				})
+			}
+		}
+	}
 }
 
 extension TripCardViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -118,4 +140,8 @@ extension TripCardViewController: TripCellDelegate {
 			}
 		}
 	}
+}
+
+extension TripCardViewController: UIGestureRecognizerDelegate {
+	
 }
