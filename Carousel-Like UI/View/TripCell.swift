@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 protocol TripCellDelegate: class {
 	func didPressLikeButton(cell: TripCell)
@@ -29,7 +30,17 @@ class TripCell: UICollectionViewCell {
 			totalDaysLabel.text = "\(trip.totalDays) Days"
 			priceLabel.text = "$" + String(describing: trip.price)
 			likeButton.setImage(trip.isLiked ? #imageLiteral(resourceName: "heartfull") : #imageLiteral(resourceName: "heart"), for: .normal)
-			imageView.image = trip.featuredImage
+			
+			// imageView.image = trip.featuredImage
+			if let featuredImage = trip.featuredImage {
+				featuredImage.getDataInBackground(block: { (data, error) in
+					if let imageData = data {
+						DispatchQueue.main.async {
+							self.imageView.image = UIImage(data: imageData)
+						}
+					}
+				})
+			}
 		}
 	}
 	
